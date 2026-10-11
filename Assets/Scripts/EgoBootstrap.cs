@@ -28,16 +28,25 @@ public static class EgoBootstrap
         canvas.renderMode = RenderMode.WorldSpace;
         var rt = canvas.GetComponent<RectTransform>();
         rt.sizeDelta = new Vector2(640, 480);
-        canvasGo.transform.localScale = Vector3.one * 0.0008f; // 小 HUD 面板(≈0.51m@1m):采数据不挡视线,面板边缘即录制边界
+        canvasGo.transform.localScale = Vector3.one * 0.0036f; // 大,但整块画面完整在视野内(看得到录制边界)
 
-        // 3) RawImage（铺满 Canvas = 录制区域）
+        // 3a) 录制边界框(亮绿,先建=在底层):框里的画面就是录进去的内容
+        var borderGo = new GameObject("RecBorder");
+        borderGo.transform.SetParent(canvasGo.transform, false);
+        var border = borderGo.AddComponent<RawImage>();
+        border.color = new Color(0.15f, 1f, 0.4f, 1f);
+        var brt = border.rectTransform;
+        brt.anchorMin = Vector2.zero; brt.anchorMax = Vector2.one;
+        brt.offsetMin = Vector2.zero; brt.offsetMax = Vector2.zero;
+
+        // 3) RawImage(录制画面,内缩 6px 露出边框 = 录制边界)
         var imgGo = new GameObject("Preview");
         imgGo.transform.SetParent(canvasGo.transform, false);
         var raw = imgGo.AddComponent<RawImage>();
         raw.color = Color.white;
         var irt = raw.rectTransform;
         irt.anchorMin = Vector2.zero; irt.anchorMax = Vector2.one;
-        irt.offsetMin = Vector2.zero; irt.offsetMax = Vector2.zero;
+        irt.offsetMin = new Vector2(6f, 6f); irt.offsetMax = new Vector2(-6f, -6f);
         src.previewImage = raw;
 
         // 3b) 录制红点提示(录制时显示在预览顶部中央)
@@ -83,7 +92,7 @@ public static class EgoBootstrap
         if (cam != null)
         {
             canvasGo.transform.SetParent(cam.transform, false);
-            canvasGo.transform.localPosition = new Vector3(0f, -0.05f, 1.0f);
+            canvasGo.transform.localPosition = new Vector3(0f, 0f, 1.0f);
             canvasGo.transform.localRotation = Quaternion.identity;
             Debug.Log("[EgoBootstrap] canvas attached to Camera.main");
         }
