@@ -1,0 +1,41 @@
+# Unity generated / build artifacts
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
+[Mm]emoryCaptures/
+[Rr]ecordings/
+
+# IDE / tooling
+.vs/
+.idea/
+.gradle/
+*.csproj
+*.sln
+*.user
+*.userprefs
+*.suo
+*.unityproj
+*.pidb
+*.booproj
+*.svd
+
+# Build outputs
+*.apk
+*.aab
+*.unitypackage
+*.app
+build.apk
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Crashlytics
+crashlytics-build.properties
+sysinfo.txt
+
+hs_err_pid*.log
