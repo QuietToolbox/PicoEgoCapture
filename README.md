@@ -1,5 +1,7 @@
 # PicoEgoCapture
 
+<a href="https://quiettoolbox.github.io/"><img src="https://quiettoolbox.github.io/assets/quiettoolbox-avatar.jpg" width="32" height="32" alt="QuietToolbox"></a> **[← QuietToolbox 首页 / Toolbox Home](https://quiettoolbox.github.io/)**
+
 Maintained by [QuietToolbox](https://github.com/QuietToolbox).
 
 First-person (egocentric) data collection app for the **PICO 4 Ultra** headset: records a synchronized **first-person video + head pose + both hands' 26-joint 3D poses**, in a format compatible with EgoKit, for training robot manipulation / VLA / world models.
