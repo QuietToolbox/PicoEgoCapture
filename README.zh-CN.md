@@ -2,7 +2,7 @@
 
 [English](README.md) | **简体中文**
 
-<a href="https://quiettoolbox.github.io/"><img src="https://quiettoolbox.github.io/assets/quiettoolbox-avatar.jpg" width="32" height="32" alt="QuietToolbox"></a> **[← 工具箱首页](https://quiettoolbox.github.io/)**
+[![返回工具箱首页](https://quiettoolbox.github.io/assets/toolbox-home-zh.svg)](https://quiettoolbox.github.io/)
 
 由 [QuietToolbox](https://github.com/QuietToolbox) 维护。
 
